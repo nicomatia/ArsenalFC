@@ -1,0 +1,853 @@
+/* reset css */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* flex principal */
+
+/* .flex-base{
+    display: flex;
+    flex-flow: column nowrap;
+} */
+
+/* menu navegacion */
+
+.nav-fixed{
+    background-image: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(170, 42, 46),rgb(178,16,29));
+    position: fixed;
+    z-index: +2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    width: 100vw;
+}
+
+.nav-img{
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.nav-cannon{
+    height: 100%;
+}
+
+.nav-container{
+    width: 85%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.nav-menu{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.hijoflex2{
+    list-style-type: none;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 15%;
+    text-align: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-logos{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+
+
+
+.header-logo2{
+    width: 30px;
+}
+
+.nav-menu .current{
+    background-color: white;
+    color: rgb(151, 0, 0);
+    padding: 5% 10%;
+    border-radius: 0.5rem;
+}
+
+/* header */
+
+header{
+    height: auto;
+}
+
+.parallax-index{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/index/arsenal_fans.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.parallax-plantilla{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/plantilla/squad-photo.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.parallax-club{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/club/es.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.parallax-historia{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/historia/goldPremier.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.parallax-contacto{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/contacto/goonersAmerica.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.fa-chevron-down{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+
+/* footer */
+
+.arrow-up{
+    position: absolute;
+}
+
+.fa-chevron-up{
+    background-color: #063672;
+    padding: 0.5rem;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(170, 42, 46),rgb(178,16,29));
+}
+
+.footer-flex{
+    height: 500px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.media{
+    height: 35%;
+}
+
+.flex-container4{
+    display: flex;
+    flex-flow: row nowrap;
+    height: 75px;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+
+.logo-footer{
+    height: 41.7px;
+}
+
+.extra{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info{
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    
+}
+
+.info ul li{
+    list-style-type: none;
+    width: 20%;
+}
+
+.info ul li a{
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.newsletter{
+    height: 25%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter p{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.newsletter form{
+    /* padding: 0 2rem; */
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 1rem;
+}
+
+.sub{
+    margin: 5px 10px ;
+    background: none;
+    border: none;
+    padding-right: 3rem;
+    outline: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.newsletter button{
+    background: white;
+    color: rgb(163, 25, 25);
+    border: 5px solid white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.sub::placeholder{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.copyright{
+    height: 30%;
+    border-top: 2px solid white;
+    /* margin-top: 1rem; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.copyright1{
+    height: 40%;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.copyright2{
+    height: 40%;
+}
+
+.copyright2 i{
+    color: white;
+}
+
+.copyright2 a{
+    padding: 0 0.5rem;
+}
+
+
+
+
+
+/* main */
+
+.main-flex{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+}
+
+.contenido-index{
+    background-color: wheat;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 800px 800px;
+    grid-template-areas: "news liga" "news podcast";
+}
+
+/* contenido index - grid-area: liga */
+
+.liga{
+    grid-area: liga;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.logo-tabla{
+    height: 20px;
+}
+
+.div-tittle{
+    height: 20%;
+}
+
+.tittle-text{
+    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(6,54,114),rgb(45, 106, 187));
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 0 1rem 0;
+    margin: 2rem 0 2rem 0;
+}
+
+.tittle-margin{
+    margin: 2rem 0.5rem 2rem 0.5rem;
+}
+
+
+
+.div-table{
+    height: 80%;
+    width: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+}
+
+.table-align{
+    text-align: start;
+    
+}
+
+.descenso{
+    background-color: crimson;
+    color: crimson;
+}
+
+.ucl{
+    background-color: green;
+}
+
+.ucl-kickoff{
+    background-color: yellow;
+}
+
+/* contenido index - grid-area: podcast */
+
+.podcast{
+    grid-area: podcast;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    height: auto;
+    background-color: white;
+}
+
+.div-podcast{
+    height: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+}
+
+.podcast1{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* contenido index - grid-area: main */
+
+.news{
+    height: auto;
+    grid-area: news;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.div-tittle-news{
+    height: 10%;
+}
+
+.div-flex-news{
+    height: 90%;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-template-areas: "noticia1 noticia2" "noticia3 noticia4" "noticia5 noticia6" "noticia7 noticia8";
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.hero-image-noticia1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/benwhite.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia1;
+    position: relative;
+    border-radius: 30px;
+}
+
+.text-news{
+    text-decoration: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 5%;
+    padding: 0 10% 0 10%;
+    text-align: center;
+}
+
+.hero-image-noticia2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/ray-kennedy.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia2;
+    position: relative;
+    border-radius: 30px;
+}
+
+.hero-image-noticia3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/potm.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia3;
+    position: relative;
+    border-radius: 30px;
+}
+
+.hero-image-noticia4{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/arteta.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia4;
+    position: relative;
+    border-radius: 30px;
+}
+
+.hero-image-noticia5{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/viv.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia5;
+    position: relative;
+    border-radius: 30px;
+}
+
+.hero-image-noticia6{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/old-trafford.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia6;
+    position: relative;
+    border-radius: 30px;
+}
+
+.hero-image-noticia7{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/no-racism.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia7;
+    position: relative;
+    border-radius: 30px;
+}
+
+.hero-image-noticia8{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/ianis.webp);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: noticia8;
+    position: relative;
+    border-radius: 30px;
+}
+
+
+
+
+/* plantilla */
+
+.contenido-plantilla{
+    background-color: burlywood;
+    width: 70%;
+    height: auto;
+    display: grid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* grid-template-columns: 200px 200px 200px 200px; */
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-rows: 260px 260px 260px 260px 260px 260px;
+    /* grid-template-rows: repeat(auto-fill, 260px); */
+    grid-gap: 1rem;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding: 6rem 0;
+}
+
+.flex-plantilla {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.plantilla-flexitem{
+    height: 45%;
+}
+
+.plantilla-flexitem2{
+    height: 45%;
+    visibility: hidden;
+}
+
+.flex-plantilla img{
+    width: 100%;
+    height: auto;
+}
+
+/* club */
+
+.contenido-club{
+    background-color: burlywood;
+    width: 70%;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    height: auto;
+}
+
+.emirates{
+    /* height: 1200px; */
+    height: auto;
+    background-color: cadetblue;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.emirates1{
+    height: auto;
+}
+
+.emirates2{
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+    padding-bottom: 2rem;
+}
+
+.club-text{
+    min-height: 300px;
+    width: 60%;
+}
+
+.club-text p{
+    width: 80%;
+    margin: auto;
+}
+
+.club-iframe{
+    width: 40%;
+}
+
+.club-map{
+    width: 100%;
+    height: 100%;
+}
+
+.emirates3{
+    /* height: 60%; */
+    height: auto;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30%;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    grid-row-gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.emirates3 img{
+    width: 100%;
+    height: auto;
+}
+
+.colney{
+    height: auto;
+    background-color: lightpink;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Historia */
+
+.contenido-historia{
+    background-color: burlywood;
+    width: 70%;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    height: auto;
+}
+
+.history-container{
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+.history-container1{
+    height: auto;
+}
+
+.history-container2 p{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.history-container2{
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+.history-container3{
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.history-img{
+    width: 40%;
+}
+
+.history-container3 img{
+    width: 100%;
+    height: auto;
+}
+
+/* Contacto */
+
+.contenido-contacto{
+    width: 70%;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    flex-flow: column nowrap;
+    height: auto;
+}
+
+.flex-aboutme{
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 2rem;
+}
+
+.div-flex-me{
+    height: auto;
+}
+
+
+.page-tittle{
+    background-color: rgb(6, 54, 114);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    padding: 1em 0 1em 0;
+    margin: 2em 0 4em 0;
+}
+
+.about-me{
+    display: flex;
+    height: auto;
+    justify-content: space-around;
+}
+
+.about-me div{
+    width: 30%;
+    text-align: center;
+}
+
+.about-me div img{
+    width: 70%;
+    height: auto;
+}
+
+.about-me p{
+    width: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.flex-form{
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.div-flex-contact{
+    height: auto;
+}
+.contact-flex{
+    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 3rem 0 3rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form{
+    width: 65%;
+    text-align: center;
+    background-image: url(../imagenes/contacto/form1opacity.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    color: rgb(151, 0, 0);
+    font-size: 1.5rem;
+}
+
+.contact-img{
+    width: 35%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/contacto/form2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-flex form button,
+.contact-flex form input,
+.contact-flex form textarea{
+    width: 80%;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin: 1rem 3rem 1rem 3rem;
+    border: none;
+    border-bottom: 0.2rem solid rgb(151, 0, 0);
+    outline: none;
+    color: rgb(151, 0, 0);
+    resize: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: none;
+}
+
+.contact-flex form .contact-button{
+    background: rgb(151, 0, 0);
+    color: white;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1em 0 1em 0;
+    width: 25%;
+}
+
+.contactBlock{
+    display: block;
+}
+
+::placeholder{
+    opacity: 1;
+    color: rgb(151, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
