@@ -61,14 +61,33 @@
     list-style-type: none;
     font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
     width: 15%;
     text-align: center;
 }
 
-nav ul li a{
+.hijoflex2 a{
     text-decoration: none;
     color: white;
+    position: relative;
 }
+
+.hijoflex2 a:after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    bottom: -0.4rem;
+    width: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.hijoflex2 a:hover:after{
+    width: 100%;
+}
+
+
 
 .nav-logos{
     width: 300px;
@@ -85,11 +104,12 @@ nav ul li a{
     width: 30px;
 }
 
+.header-logo2:hover{
+    transform: scale(1.2,1.2);
+}
+
 .nav-menu .current{
-    background-color: white;
-    color: rgb(151, 0, 0);
-    padding: 5% 10%;
-    border-radius: 0.5rem;
+    font-weight: bold;
 }
 
 /* header */
@@ -100,52 +120,67 @@ header{
 
 .parallax-index{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/index/arsenal_fans.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(250,250,250, 0),transparent),linear-gradient(45deg, rgba(250,250,250, 0),transparent),repeating-linear-gradient(135deg, rgba(44,44,44, 0.1) 0px, rgba(44,44,44, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgba(250,250,250, 0),rgba(250,250,250, 0)), url("/imagenes/index/arsenal_fans.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax-plantilla{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/plantilla/squad-photo.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(250,250,250, 0),transparent),linear-gradient(45deg, rgba(250,250,250, 0),transparent),repeating-linear-gradient(135deg, rgba(44,44,44, 0.1) 0px, rgba(44,44,44, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgba(250,250,250, 0),rgba(250,250,250, 0)), url("/imagenes/plantilla/squad-photo.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax-club{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/club/es.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(250,250,250, 0),transparent),linear-gradient(45deg, rgba(250,250,250, 0),transparent),repeating-linear-gradient(135deg, rgba(44,44,44, 0.1) 0px, rgba(44,44,44, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgba(250,250,250, 0),rgba(250,250,250, 0)), url("/imagenes/club/es.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax-historia{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/historia/goldPremier.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(250,250,250, 0),transparent),linear-gradient(45deg, rgba(250,250,250, 0),transparent),repeating-linear-gradient(135deg, rgba(44,44,44, 0.1) 0px, rgba(44,44,44, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgba(250,250,250, 0),rgba(250,250,250, 0)), url("/imagenes/historia/goldPremier.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax-contacto{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagenes/contacto/goonersAmerica.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(250,250,250, 0),transparent),linear-gradient(45deg, rgba(250,250,250, 0),transparent),repeating-linear-gradient(135deg, rgba(44,44,44, 0.1) 0px, rgba(44,44,44, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgba(250,250,250, 0),rgba(250,250,250, 0)), url("/imagenes/contacto/goonersAmerica.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fa-chevron-down{
@@ -155,6 +190,12 @@ header{
     color: white;
     font-size: 1.5rem;
     opacity: 0.5;
+    animation: bounce;
+    animation-iteration-count: infinite;
+}
+
+.fa-chevron-down:hover{
+    opacity: 1;
 }
 
 
@@ -173,6 +214,11 @@ header{
     right: 10px;
     color: white;
     font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+.fa-chevron-up:hover{
+    opacity: 1;
 }
 
 footer{
@@ -192,7 +238,27 @@ footer{
 
 .media{
     height: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+.media-text{
+    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: transparent;
+    text-transform: uppercase;
+    font-size: 8rem;
+    font-weight: bold;
+    letter-spacing: 2vw;
+    background-image: url(../imagenes/giphy.gif);
+    background-clip: text;
+    background-size: cover;
+    background-position: center;
+}
+
+
 
 .flex-container4{
     display: flex;
@@ -206,6 +272,11 @@ footer{
 .logo-footer{
     height: 41.7px;
 }
+
+.logo-footer:hover{
+    transform: scale(1.2,1.2);
+}
+
 
 .extra{
     height: 40%;
@@ -238,6 +309,22 @@ footer{
     color: white;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+}
+
+.info a:after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    bottom: -0.4rem;
+    width: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.info a:hover:after{
+    width: 100%;
 }
 
 .newsletter{
@@ -253,29 +340,37 @@ footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.newsletter form{
-    /* padding: 0 2rem; */
+.sub-form{
     border: 2px solid white;
     border-radius: 10px;
     margin-left: 1rem;
+    padding-right: 0.5rem;
 }
 
 .sub{
-    margin: 5px 10px ;
     background: none;
     border: none;
-    padding-right: 3rem;
     outline: none;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto 0;
+    padding: 0.5rem 3rem 0.5rem 0.5rem;
 }
 
 .newsletter button{
-    background: white;
-    color: rgb(163, 25, 25);
-    border: 5px solid white;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    color: white;
+    border:none;
+    background-color:transparent;
+    outline:none;
+}
+
+.newsletter button i{
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.newsletter button i:hover{
+    opacity: 1;
 }
 
 .sub::placeholder{
@@ -325,14 +420,14 @@ footer{
     flex-direction: row;
     height: auto;
     justify-content: center;
+    background-image: repeating-linear-gradient(135deg, rgba(189,189,189,0.1) 0px, rgba(189,189,189,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
 }
 
 .contenido-index{
-    background-color: wheat;
     width: 70%;
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-template-rows: 800px 800px;
+    grid-template-rows: 850px 850px;
     grid-template-areas: "news liga" "news podcast";
 }
 
@@ -340,10 +435,15 @@ footer{
 
 .liga{
     grid-area: liga;
-    background-color: #ffff;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border-radius: 2rem;
+    margin: 0 5%;
+    margin-top: 85px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .logo-tabla{
@@ -351,7 +451,7 @@ footer{
 }
 
 .div-tittle{
-    height: 20%;
+    height: auto;
 }
 
 .tittle-text{
@@ -359,13 +459,14 @@ footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 1rem 0 1rem 0;
-    margin: 2rem 0 2rem 0;
+    color: #FFFFFF;
+    text-shadow: 4px 3px 0 #041529;
 }
 
 .tittle-margin{
-    margin: 2rem 0.5rem 2rem 0.5rem;
+    /* margin: 2rem 0.5rem 2rem 0.5rem; */
 }
 
 
@@ -404,19 +505,25 @@ footer{
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
+    justify-content: space-between;
     height: auto;
-    background-color: white;
+    border-radius: 2rem;
+    margin: 60px 5%;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .div-podcast{
-    height: 80%;
+    height: 90%;
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
+    justify-content: space-around;
 }
 
 .podcast1{
-    width: 100%;
+    height: 30%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -427,14 +534,19 @@ footer{
     grid-area: news;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: space-between;
+    border-radius: 2rem;
+    margin: 85px 5% 60px 5%;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .div-tittle-news{
-    height: 10%;
+    height: auto;
 }
 
 .div-flex-news{
-    height: 90%;
+    height: 95%;
     display: grid;
     grid-template-columns: 40% 40%;
     grid-template-rows: 20% 20% 20% 20%;
@@ -443,16 +555,39 @@ footer{
     align-content: space-around;
 }
 
+.hero-image{
+    overflow: hidden;
+    border-radius: 30px;
+}
+
 .hero-image-noticia1{
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/benwhite.webp);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia1;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
+
+.hero-image-noticia1:hover,
+.hero-image-noticia2:hover,
+.hero-image-noticia3:hover,
+.hero-image-noticia4:hover,
+.hero-image-noticia5:hover,
+.hero-image-noticia6:hover,
+.hero-image-noticia7:hover,
+.hero-image-noticia8:hover{
+    transform: scale(1.1,1.1);
+    filter: grayscale(80%);
+    transition: all 0.5s;
+}
+
+
+
+
+
 
 .text-news{
     text-decoration: none;
@@ -464,7 +599,10 @@ footer{
     bottom: 5%;
     padding: 0 10% 0 10%;
     text-align: center;
+    transition: all 5s;
 }
+
+
 
 .hero-image-noticia2{
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/ray-kennedy.webp);
@@ -472,9 +610,9 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia2;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
 
 .hero-image-noticia3{
@@ -483,9 +621,9 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia3;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
 
 .hero-image-noticia4{
@@ -494,9 +632,9 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia4;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
 
 .hero-image-noticia5{
@@ -505,9 +643,9 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia5;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
 
 .hero-image-noticia6{
@@ -516,9 +654,9 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia6;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
 
 .hero-image-noticia7{
@@ -527,9 +665,9 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia7;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
 
 .hero-image-noticia8{
@@ -538,9 +676,9 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: noticia8;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s;
 }
 
 
@@ -587,7 +725,6 @@ footer{
 /* club */
 
 .contenido-club{
-    background-color: burlywood;
     width: 70%;
     display: flex;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -597,11 +734,13 @@ footer{
 }
 
 .emirates{
-    /* height: 1200px; */
     height: auto;
-    background-color: cadetblue;
     display: flex;
     flex-flow: column nowrap;
+    margin: 85px 0 60px 0;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .emirates1{
@@ -613,7 +752,7 @@ footer{
     display: flex;
     justify-content: space-around;
     flex-flow: row nowrap;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
 }
 
 .club-text{
@@ -628,15 +767,17 @@ footer{
 
 .club-iframe{
     width: 40%;
+    text-align: center;
 }
 
 .club-map{
-    width: 100%;
+    width: 80%;
     height: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .emirates3{
-    /* height: 60%; */
     height: auto;
     display: grid;
     grid-template-columns: 30% 30% 30%;
@@ -645,25 +786,28 @@ footer{
     align-content: space-around;
     align-items: center;
     grid-row-gap: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
 }
 
 .emirates3 img{
     width: 100%;
     height: auto;
+    border-radius: 20px;
 }
 
 .colney{
     height: auto;
-    background-color: lightpink;
     display: flex;
     flex-flow: column nowrap;
+    margin: 85px 0 60px 0;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 /* Historia */
 
 .contenido-historia{
-    background-color: burlywood;
     width: 70%;
     display: flex;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -675,6 +819,10 @@ footer{
 .history-container{
     height: auto;
     padding-bottom: 2rem;
+    margin: 85px 0 60px 0;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .history-container1{
@@ -688,7 +836,7 @@ footer{
 
 .history-container2{
     height: auto;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
 }
 
 .history-container3{
@@ -700,11 +848,15 @@ footer{
 
 .history-img{
     width: 40%;
+    height: auto;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .history-container3 img{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 /* Contacto */
@@ -722,7 +874,10 @@ footer{
     height: auto;
     display: flex;
     flex-flow: column nowrap;
-    margin-bottom: 2rem;
+    margin: 85px 0 60px 0;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .div-flex-me{
@@ -743,6 +898,7 @@ footer{
     display: flex;
     height: auto;
     justify-content: space-around;
+    padding: 40px 0 40px 0;
 }
 
 .about-me div{
@@ -753,6 +909,7 @@ footer{
 .about-me div img{
     width: 70%;
     height: auto;
+    border-radius: 20px;
 }
 
 .about-me p{
@@ -764,6 +921,10 @@ footer{
     height: auto;
     display: flex;
     flex-flow: column nowrap;
+    margin: 85px 0 60px 0;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .div-flex-contact{
@@ -772,7 +933,6 @@ footer{
 .contact-flex{
     height: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 3rem 0 3rem 0;
     display: flex;
     justify-content: center;
 }
@@ -831,6 +991,8 @@ footer{
     opacity: 1;
     color: rgb(151, 0, 0);
 }
+
+
 
 
 
