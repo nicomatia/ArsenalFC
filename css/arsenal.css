@@ -557,7 +557,7 @@ footer{
 }
 
 .hero-image-noticia1{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(/imagenes/index/novedades/benwhite.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/benwhite.webp);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
