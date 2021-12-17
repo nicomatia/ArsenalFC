@@ -22,7 +22,7 @@
 }
 
 .navbar{
-    background-image: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(170, 42, 46),rgb(178,16,29));
+    background-image: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(170, 42, 46),rgba(178, 16, 30, 0.650));
     position: fixed;
     z-index: +2;
     width: 100%;
@@ -85,6 +85,20 @@ header{
     height: auto;
 }
 
+/* .parallax-index{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.parallax-img{
+    display: block;
+    overflow: visible;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+} */
+
 .parallax-index{
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(250,250,250, 0),transparent),linear-gradient(45deg, rgba(250,250,250, 0),transparent),repeating-linear-gradient(135deg, rgba(44,44,44, 0.1) 0px, rgba(44,44,44, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgba(250,250,250, 0),rgba(250,250,250, 0)), url("../imagenes/index/arsenal_fans.webp");
@@ -96,6 +110,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .parallax-plantilla{
@@ -109,6 +124,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .parallax-club{
@@ -122,6 +138,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .parallax-historia{
@@ -135,6 +152,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .parallax-contacto{
@@ -148,6 +166,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .fa-chevron-down{
@@ -192,7 +211,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-image: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(170, 42, 46),rgb(178,16,29));
+    background-image: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(170, 42, 46),rgba(178,16,29,0.650));
 }
 
 .footer-flex{
@@ -365,7 +384,6 @@ footer{
 .copyright1{
     height: 40%;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .copyright2{
@@ -427,7 +445,7 @@ footer{
 }
 
 .tittle-text{
-    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(6,54,114),rgb(45, 106, 187));
+    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(6,54,114),rgba(45, 106, 187,0.644));
     text-align: center;
     color: white;
     font-size: 1.3rem;
@@ -629,14 +647,12 @@ footer{
 /* plantilla */
 
 .contenido-plantilla{
-    background-color: burlywood;
     width: 70%;
     height: auto;
     display: grid;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* grid-template-columns: 200px 200px 200px 200px; */
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-template-rows: 260px 260px 260px 260px 260px 260px;
+    grid-template-columns: repeat(auto-fill, 220px);
+    grid-template-rows: 300px 300px 300px 300px 300px 300px;
     /* grid-template-rows: repeat(auto-fill, 260px); */
     grid-gap: 1rem;
     justify-content: space-evenly;
@@ -648,15 +664,40 @@ footer{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .plantilla-flexitem{
-    height: 45%;
+    height: auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.plantilla-flexitem2 p{
+    margin: 0;
+    color: white;
+}
+
+.flex-plantilla:hover > .plantilla-flexitem2:not(:hover){
+    visibility: visible;
 }
 
 .plantilla-flexitem2{
-    height: 45%;
+    height: auto;
     visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(6, 54, 114), rgba(6, 55, 114, 0.644));
+}
+
+.plantilla-text2{
+    text-align: right;
+}
+
+.plantilla-text1,
+.plantilla-text2{
+    padding: 10px 5px 10px 5px;
 }
 
 .flex-plantilla img{
@@ -1076,6 +1117,18 @@ footer{
         opacity: 1;
     }
 
+    .contact-img{
+        visibility: hidden;
+    }
+
+    .contact-form{
+        width: 100%;
+    }
+
+    .contact-flex{
+        display: block;
+    }
+
     /* desactivo hovers para dispositivos moviles*/
 
     .line a:after{
@@ -1131,6 +1184,10 @@ footer{
 
     .logo-footer:hover{
         transform: scale(1,1);
+    }
+
+    .plantilla-flexitem2{
+        visibility: visible;
     }
 
     /* termina desactivacion hover */
@@ -1279,6 +1336,10 @@ footer{
         transform: scale(1,1);
     }
 
+    .plantilla-flexitem2{
+        visibility: visible;
+    }
+
     /* termina desactivacion hover */
 
 
@@ -1392,6 +1453,10 @@ footer{
 
     .logo-footer:hover{
         transform: scale(1,1);
+    }
+
+    .plantilla-flexitem2{
+        visibility: visible;
     }
 
     /* termina desactivacion hover */
