@@ -77,6 +77,8 @@
     width: 100%;
 }
 
+
+
 /* header */
 
 header{
@@ -178,7 +180,7 @@ header{
     bottom: 10px;
     right: 10px;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     opacity: 0.5;
 }
 
@@ -370,7 +372,7 @@ footer{
     height: 40%;
 }
 
-.copyright2 i{
+.fa-github, .fa-linkedin-in{
     color: white;
 }
 
@@ -942,6 +944,11 @@ footer{
 
 @media only screen and (max-width: 576px){
 
+    .nav-logos{
+        width: 200px;
+    }
+
+
     .contenido-index,
     .contenido-plantilla,
     .contenido-club,
@@ -951,8 +958,47 @@ footer{
         width: 95%;
     }
 
+    .contenido-index{
+
+    }
+
+    .div-flex-news{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+
+    .hero-image{
+        width: 90%;
+        height: 300px;
+        margin: 2rem 0;
+    }
+
     .media-text{
-        font-size: 5rem;
+        font-size: 4rem;
+    }
+
+    .media{
+        height: 20%;
+    }
+
+    .flex-container4{
+        display: flex;
+        flex-flow: row wrap;
+        height: auto;
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+    }
+
+    .flex-container4 a{
+        padding: 0.2rem;
+    }
+
+    .extra{
+        height: 50%;
     }
 
     .about-me div{
@@ -973,7 +1019,7 @@ footer{
     .contenido-index{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 1700px 850px 850px;
+        grid-template-rows: auto 850px 850px;
         grid-template-areas: "news" "liga" "podcast";
     }
 
@@ -1005,6 +1051,12 @@ footer{
 
     .club-iframe{
         width: 80%;
+        height: 300px;
+        margin-bottom: 1rem;
+    }
+
+    .club-map{
+        height: 100%;
     }
 
     .about-me{
