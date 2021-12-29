@@ -1,0 +1,1491 @@
+// variables
+
+$font: 'Barlow', sans-serif;
+
+$gradient_nav_foot: repeating-linear-gradient(135deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),repeating-linear-gradient(45deg, rgba(24,24,24, 0.07) 0px, rgba(24,24,24, 0.07) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(170, 42, 46),rgba(178, 16, 30, 0.650));
+
+$gradient_parallax: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(250,250,250, 0),transparent),linear-gradient(45deg, rgba(250,250,250, 0),transparent),repeating-linear-gradient(135deg, rgba(44,44,44, 0.1) 0px, rgba(44,44,44, 0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgba(250,250,250, 0),rgba(250,250,250, 0));
+
+$gradient_background: repeating-linear-gradient(135deg, rgba(189,189,189,0.1) 0px, rgba(189,189,189,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+
+$gradient_text: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px,transparent 2px, transparent 4px),linear-gradient(0deg, rgb(6,54,114),rgba(45, 106, 187,0.644));
+
+$box_shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+
+// extend
+
+%parallax{
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+%arrow_header{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    animation: bounce;
+    animation-iteration-count: infinite;
+}
+
+%news-image{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 30px;
+    transition: all 0.5s;
+}
+
+// mixin
+
+@mixin respond($breakpoint){
+    @if ($breakpoint == x_small) {
+        @media only screen and (max-width: 576px) {@content} 
+    };  
+    @if ($breakpoint == small) {
+        @media only screen and (min-width: 576px) and (max-width:768px) {@content}
+    };
+    @if ($breakpoint == medium) {
+        @media only screen and (min-width: 768px) and (max-width: 992px) {@content}
+    };
+    @if ($breakpoint == large) {
+        @media only screen and (min-width: 992px) and (max-width: 1200px) {@content}
+    };
+    @if ($breakpoint == x_large) {
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {@content}
+    }
+
+}
+
+
+// reset css
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif !important;
+}
+
+// navegador
+
+.navbar{
+
+    background-image: $gradient_nav_foot;
+    position: fixed;
+    z-index: +2;
+    width: 100%;
+    font-weight: bolder;
+    font-family: $font;
+
+    .nav-cannon{
+        height: 50px;
+    }
+
+    .nav-logos{
+        width: 300px;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: space-evenly;
+        align-items: center; 
+        @include respond(x_small){
+            width: 200px;
+        }
+
+
+        .nav-logos-img{
+            width: 30px;
+        }
+    
+        .nav-logos-img:hover{
+            transform: scale(1.2,1.2);
+            @include respond(x_small){
+                transform: scale(1,1);
+            }
+            @include respond(small){
+                transform: scale(1,1);
+            }
+            @include respond(medium){
+                transform: scale(1,1);
+            }
+        }
+    }
+
+    .navbar-nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        .nav-item{
+            width: auto;
+            position: relative;
+            text-transform: uppercase;
+        }
+    
+        .line a:after{
+            content: "";
+            position: absolute;
+            background-color: white;
+            height: 2px;
+            bottom: -0.1rem;
+            width: 0;
+            left: 0;
+            transition: 0.3s;
+        }
+        
+        .line a:hover:after{
+            width: 100%;
+            @include respond(x_small){
+                width: 0;
+            }
+            @include respond(small){
+                width: 0;
+            }
+            @include respond(medium){
+                width: 0;
+            }
+        }
+    }
+}
+
+// header
+
+
+header{
+    height: auto;
+}
+
+.parallax-index{
+    background-image: $gradient_parallax, url(../imagenes/index/arsenal_fans.jpg);
+    @extend %parallax;
+
+    .fa-chevron-down{
+        @extend %arrow_header
+    }
+    
+    .fa-chevron-down:hover{
+            opacity: 1;
+        }
+}
+
+.parallax-plantilla{
+    background-image: $gradient_parallax, url(../imagenes/plantilla/squad-photo.jpg);
+    @extend %parallax;
+
+    .fa-chevron-down{
+        @extend %arrow_header
+    }
+
+    .fa-chevron-down:hover{
+        opacity: 1;
+    }
+}
+
+.parallax-club{
+    background-image: $gradient_parallax, url(../imagenes/club/es.jpg);
+    @extend %parallax;
+
+    .fa-chevron-down{
+        @extend %arrow_header
+    }
+
+    .fa-chevron-down:hover{
+        opacity: 1;
+    }
+
+}
+
+.parallax-historia{
+    background-image: $gradient_parallax, url(../imagenes/historia/goldPremier.jpg);
+    @extend %parallax;
+
+    .fa-chevron-down{
+        @extend %arrow_header
+    }
+
+    .fa-chevron-down:hover{
+        opacity: 1;
+    }
+}
+
+.parallax-contacto{
+    background-image: $gradient_parallax, url(../imagenes/contacto/goonersAmerica.jpg);
+    @extend %parallax;
+
+    .fa-chevron-down{
+        @extend %arrow_header
+    }
+
+    .fa-chevron-down:hover{
+        opacity: 1;
+    }
+}
+
+
+// footer
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: $gradient_nav_foot;
+
+    .footer-flex{
+        height: 500px;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @include respond(x_small){
+            width: 95%;
+        }
+        @include respond(small){
+            width: 95%;
+        }
+        @include respond(medium){
+            width: 95%;
+        }
+        @include respond(large){
+            width: 90%;
+        }
+        @include respond(x_large){
+            width: 90%;
+        }
+
+        .arrow-up{
+            position: absolute;
+            .fa-chevron-up{
+                background-color: #063672;
+                padding: 0.5rem;
+                border-radius: 25px;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                color: white;
+                font-size: 2rem;
+                opacity: 0.5;
+            }
+            .fa-chevron-up:hover{
+                opacity: 1;
+            }
+        }
+
+        .media{
+            height: 35%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include respond(x_small){
+                height: 20%;
+            }
+    
+            .media-text{
+                height: auto;
+                color: transparent;
+                text-transform: uppercase;
+                font-family: $font;
+                font-size: 8rem;
+                font-weight: bold;
+                font-weight: 900;
+                letter-spacing: 2vw;
+                background-image: url(../imagenes/giphy.gif);
+                background-clip: text;
+                -webkit-background-clip:  text;
+                -o-background-clip:  text;
+                -ms-background-clip:  text;
+                background-size: cover;
+                background-position: center;
+                @include respond(x_small){
+                    font-size: 4rem;
+                }
+                @include respond(small){
+                    font-size: 5rem;
+                }
+                @include respond(medium){
+                    font-size: 6.5rem;
+                }
+            }
+        }
+
+        .ads{
+            display: flex;
+            flex-flow: row nowrap;
+            height: 75px;
+            justify-content: space-evenly;
+            text-align: center;
+            align-items: center;
+            @include respond(x_small){
+                display: flex;
+                flex-flow: row wrap;
+                height: auto;
+                justify-content: space-evenly;
+                text-align: center;
+                align-items: center;
+            }
+
+            a{
+                @include respond(x_small){
+                    padding: 0.2rem;
+                }
+            }
+    
+            .logo-footer{
+                height: 41.7px;
+            }
+            .logo-footer:hover{
+                transform: scale(1.2,1.2);
+                @include respond(x_small){
+                    transform: scale(1,1);
+                }
+                @include respond(small){
+                    transform: scale(1,1);
+                }
+                @include respond(medium){
+                    transform: scale(1,1);
+                }
+            }
+        }
+
+        .extra{
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include respond(x_small){
+                height: 50%;
+            }
+    
+            .info{
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+    
+                .info-list{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-around;
+                    text-align: center;
+
+                    .list-item{
+                        list-style-type: none;
+                        width: auto;
+                        @include respond(large){
+                            width: 25%;
+                        }
+
+                        .list-item-link{
+                            color: white;
+                            text-decoration: none;
+                            position: relative;
+                            font-weight: lighter;
+                            font-weight: 400;
+                            font-family: $font;
+                        }
+        
+                        .list-item-link:after{
+                            content: "";
+                            position: absolute;
+                            background-color: white;
+                            height: 2px;
+                            bottom: -0.4rem;
+                            width: 0;
+                            left: 0;
+                            transition: 0.3s;
+                        }
+                        
+                        .list-item-link:hover:after{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+    
+            .newsletter{
+                height: 25%;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                @include respond(x_small){
+                    flex-direction: column;
+                }
+                @include respond(small){
+                    flex-direction: column;
+                }
+    
+                .newsletter-text{
+                    color: white;
+                    font-weight: lighter;
+                    font-weight: 400;
+                    margin: 0;
+                    font-family: $font;
+                    @include respond(x_small){
+                        margin: 0;
+                        margin-bottom: 10px;
+                    }
+                    @include respond(small){
+                        margin: 0;
+                        margin-bottom: 10px;
+                    }
+                }
+    
+                .sub-form{
+                    border: 2px solid white;
+                    border-radius: 10px;
+                    margin-left: 1rem;
+                    padding-right: 0.5rem;
+    
+                    .sub{
+                        background: none;
+                        border: none;
+                        outline: none;
+                        color: white;
+                        margin: auto 0;
+                        padding: 0.5rem 3rem 0.5rem 0.5rem;
+                    }
+    
+                    .sub::placeholder{
+                        color: white;
+                        font-size: 0.8rem;
+                        border: none;
+                        font-family: $font;
+                    }
+    
+                    .newsletter-button{
+                        color: white;
+                        border:none;
+                        background-color:transparent;
+                        outline:none;
+    
+                        .button-i{
+                            font-size: 1.2rem;
+                            opacity: 0.5;
+                            @include respond(x_small){
+                                opacity: 1;
+                            }
+                            @include respond(small){
+                                opacity: 1;
+                            }
+                            @include respond(medium){
+                                opacity: 1;
+                            }
+                        }
+    
+                        .button-i:hover{
+                            opacity: 1;
+                        }
+                        
+                    }
+                }
+            }
+    
+            .copyright{
+                height: 30%;
+                border-top: 2px solid white;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                justify-content: flex-end;
+    
+                .copyright1{
+                    height: 40%;
+                    color: white;
+                }
+    
+                .copyright2{
+                    height: 40%;
+    
+                    .copy-icon{
+                        padding: 0 0.5rem;
+                    }
+    
+                    .fa-github, .fa-linkedin-in{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// main
+
+.main-flex{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    background-image: $gradient_background;
+
+    .contenido-index{
+        width: 70%;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: 850px 850px;
+        grid-template-areas: "news liga" "news podcast";
+        @include respond(x_small){
+            width: 95%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: auto 850px 850px;
+            grid-template-areas: "news" "liga" "podcast";
+        }
+        @include respond(small){
+            width: 95%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 1700px 850px 850px;
+            grid-template-areas: "news" "liga" "podcast";
+        }
+        @include respond(medium){
+            width: 95%;
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 1700px 850px;
+            grid-template-areas: "news news" "liga podcast";
+        }
+        @include respond(large){
+            width: 90%;
+        }
+        @include respond(x_large){
+            width: 90%;
+        }
+
+        .news{
+            height: auto;
+            grid-area: news;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            border-radius: 2rem;
+            margin: 85px 5% 60px 5%;
+            overflow: hidden;
+            box-shadow: $box_shadow;
+            @include respond(x_small){
+                margin: 85px 2.5% 60px 2.5%;
+            }
+            @include respond(small){
+                margin: 85px 2.5% 60px 2.5%;
+            }
+            @include respond(medium){
+                margin: 85px 2.5% 60px 2.5%;
+            }
+
+            .div-tittle-news{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+            }
+
+            .div-flex-news{
+                height: 95%;
+                display: grid;
+                grid-template-columns: 40% 40%;
+                grid-template-rows: 20% 20% 20% 20%;
+                grid-template-areas: "noticia1 noticia2" "noticia3 noticia4" "noticia5 noticia6" "noticia7 noticia8";
+                justify-content: space-around;
+                align-content: space-around;
+                @include respond(x_small){
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: auto;
+                }
+
+                .hero-image{
+                    overflow: hidden;
+                    border-radius: 30px;
+                    @include respond(x_small){
+                        width: 90%;
+                        height: 300px;
+                        margin: 2rem 0;
+                    }
+                
+
+                    .text-news{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1rem;
+                        font-weight: bolder;
+                        font-weight: 600;
+                        position: absolute;
+                        bottom: 5%;
+                        padding: 0 10% 0 10%;
+                        text-align: center;
+                        transition: all 5s;
+                        font-family: $font;
+                    }
+
+                    .hero-image-noticia1{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/benwhite.jpg);
+                        @extend %news-image;
+                        @include respond(x_small){
+
+                        }
+                    }
+
+                    .hero-image-noticia2{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/ray-kennedy.jpg);
+                        @extend %news-image;
+                    }
+                    
+                    .hero-image-noticia3{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/potm.jpg);
+                        @extend %news-image;
+                    }
+                    
+                    .hero-image-noticia4{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/arteta.jpg);
+                        @extend %news-image;
+                    }
+                    
+                    .hero-image-noticia5{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/viv.jpg);
+                        @extend %news-image;
+                    }
+                    
+                    .hero-image-noticia6{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/old-trafford.jpg);
+                        @extend %news-image;
+                    }
+                    
+                    .hero-image-noticia7{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/no-racism.jpg);
+                        @extend %news-image;
+                    }
+                    
+                    .hero-image-noticia8{
+                        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.95)), url(../imagenes/index/novedades/ianis.jpg);
+                        @extend %news-image;
+                    }
+
+                    .hero-image-noticia1:hover,
+                    .hero-image-noticia2:hover,
+                    .hero-image-noticia3:hover,
+                    .hero-image-noticia4:hover,
+                    .hero-image-noticia5:hover,
+                    .hero-image-noticia6:hover,
+                    .hero-image-noticia7:hover,
+                    .hero-image-noticia8:hover{
+                        transform: scale(1.1,1.1);
+                        filter: grayscale(80%);
+                        transition: all 0.5s;
+                        @include respond(x_small){
+                            transform: scale(1,1);
+                            filter: grayscale(0);
+                            transition: all 0.5s;
+                        }
+                        @include respond(small){
+                            transform: scale(1,1);
+                            filter: grayscale(0);
+                            transition: all 0.5s;
+                        }
+                        @include respond(medium){
+                            transform: scale(1,1);
+                            filter: grayscale(0);
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+
+        .liga{
+            grid-area: liga;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 2rem;
+            margin: 0 5%;
+            margin-top: 85px;
+            margin-bottom: 60px;
+            overflow: hidden;
+            box-shadow: $box_shadow;
+
+            .div-tittle{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+            }
+
+            .table th, .table td{
+                padding: 0.1rem 0;
+            }
+            
+            .shield{
+                text-align: center;
+            }
+
+            .logo-tabla{
+                height: 20px;
+                padding-left: 0.5rem;
+            }
+        }
+
+        .podcast{
+            grid-area: podcast;
+            display: flex;
+            flex-flow: column nowrap;
+            text-align: center;
+            justify-content: space-between;
+            height: auto;
+            border-radius: 2rem;
+            margin: 60px 5%;
+            overflow: hidden;
+            box-shadow: $box_shadow;
+            @include respond(x_small){
+                margin-top: 85px;
+            }
+            @include respond(small){
+                margin-top: 85px;
+            }
+            @include respond(medium){
+                margin-top: 85px;
+            }
+
+
+            .div-tittle{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+            }
+
+            .div-podcast{
+                height: 90%;
+                display: flex;
+                flex-flow: column nowrap;
+                text-align: center;
+                justify-content: space-around;
+
+                .podcast1{
+                    height: 30%;
+                    width: 90%;
+                    margin: 0 auto;
+                    @include respond(large){
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// plantilla
+
+.main-flex{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    background-image: $gradient_background;
+
+    .contenido-plantilla{
+        width: 70%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 220px);
+        grid-template-rows: 300px 300px 300px 300px 300px 300px;
+        grid-gap: 1rem;
+        justify-content: space-evenly;
+        align-content: space-evenly;
+        padding: 6rem 0;
+        @include respond(x_small){
+            width: 95%;
+        }
+        @include respond(small){
+            width: 95%;
+        }
+        @include respond(medium){
+            width: 95%;
+        }
+        @include respond(large){
+            width: 90%;
+        }
+        @include respond(x_large){
+            width: 90%;
+        }
+
+        .flex-plantilla {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .plantilla-flexitem{
+                height: auto;
+                box-shadow: $box_shadow;
+
+                .plantilla-img{
+                    width: 100%;
+                    height: auto;
+                }
+                }
+
+            .plantilla-flexitem2{
+                height: auto;
+                visibility: hidden;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-image: $gradient_text;
+                @include respond(x_small){
+                    visibility: visible;
+                }
+                @include respond(small){
+                    visibility: visible;
+                }
+                @include respond(medium){
+                    visibility: visible;
+                }
+
+                .plantilla-text1{
+                    padding: 10px 5px 10px 5px;
+                }
+                .plantilla-text2{
+                    padding: 10px 5px 10px 5px;
+                    text-align: right;
+                }
+                p{
+                    margin: 0;
+                    color: white;
+                }
+                }
+            }
+        }
+}
+
+// club
+
+.main-flex{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    background-image: $gradient_background;
+
+    .contenido-club{
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+        height: auto;
+        @include respond(x_small){
+            width: 95%;
+        }
+        @include respond(small){
+            width: 95%;
+        }
+        @include respond(medium){
+            width: 95%;
+        }
+        @include respond(large){
+            width: 90%;
+        }
+        @include respond(x_large){
+            width: 90%;
+        }
+
+        .emirates{
+            height: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 85px 0 60px 0;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: $box_shadow;
+
+            .emirates1{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+            }
+
+            .emirates2{
+                height: auto;
+                display: flex;
+                justify-content: space-around;
+                flex-flow: row nowrap;
+                padding: 2rem 0;
+                align-items: center;
+                @include respond(x_small){
+                    flex-direction: column;
+                }
+                @include respond(small){
+                    flex-direction: column;
+                }
+
+                .club-text{
+                    min-height: 300px;
+                    width: 60%;
+                    @include respond(x_small){
+                        width: 100%;
+                        margin-bottom: 60px;
+                    }
+                    @include respond(small){
+                        width: 100%;
+                        margin-bottom: 60px;
+                    }
+
+                    p{
+                        width: 80%;
+                        margin: auto;
+                    }
+                }
+
+                .club-iframe{
+                    width: 40%;
+                    text-align: center;
+                    @include respond(x_small){
+                        width: 80%;
+                        height: 300px;
+                        margin-bottom: 1rem;
+                    }
+                    @include respond(small){
+                        width: 80%;
+                    }
+
+                    .club-map{
+                        width: 100%;
+                        border-radius: 20px;
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                        @include respond(x_small){
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .emirates3{
+                height: auto;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                    filter: saturate(50%);
+                }
+            }
+        }
+
+        .colney{
+            height: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 85px 0 60px 0;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+            .emirates1{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+            }
+
+            .emirates2{
+                height: auto;
+                display: flex;
+                justify-content: space-around;
+                flex-flow: row nowrap;
+                padding: 2rem 0;
+                align-items: center;
+                @include respond(x_small){
+                    flex-direction: column;
+                }
+                @include respond(small){
+                    flex-direction: column;
+                }
+
+                .club-text{
+                    min-height: 300px;
+                    width: 60%;
+                    @include respond(x_small){
+                        width: 100%;
+                        margin-bottom: 60px;
+                    }
+                    @include respond(small){
+                        width: 100%;
+                        margin-bottom: 60px;
+                    }
+
+                    p{
+                        width: 80%;
+                        margin: auto;
+                    }
+                }
+
+                .club-iframe{
+                    width: 40%;
+                    text-align: center;
+                    @include respond(x_small){
+                        width: 80%;
+                        height: 300px;
+                        margin-bottom: 1rem;
+                    }
+                    @include respond(small){
+                        width: 80%;
+                    }
+
+                    .club-map{
+                        width: 100%;
+                        border-radius: 20px;
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                        @include respond(x_small){
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .emirates3{
+                height: auto;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                    filter: saturate(50%);
+                }
+            }
+        }
+        
+    }
+}
+
+// historia
+
+.main-flex{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    background-image: $gradient_background;
+
+    .contenido-historia{
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+        height: auto;
+        @include respond(x_small){
+            width: 95%;
+        }
+        @include respond(small){
+            width: 95%;
+        }
+        @include respond(medium){
+            width: 95%;
+        }
+        @include respond(large){
+            width: 90%;
+        }
+        @include respond(x_large){
+            width: 90%;
+        }
+
+        .history-container{
+            height: auto;
+            padding-bottom: 2rem;
+            margin: 85px 0 60px 0;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: $box_shadow;
+
+            .history-container1{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+            }
+
+            .history-container2{
+                height: auto;
+                padding: 2rem 0;
+
+                p{
+                    width: 80%;
+                    margin: 0 auto;
+                }
+            }
+
+            .history-container3{
+                height: auto;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+                @include respond(x_small){
+                    flex-flow: column nowrap;
+                    align-items: center;    
+                }
+                @include respond(small){
+                    flex-flow: column nowrap;
+                    align-items: center;
+                }
+                @include respond(medium){
+                    flex-flow: column nowrap;
+                    align-items: center;
+                }
+                @include respond(large){
+                    flex-flow: column nowrap;
+                    align-items: center;
+                }
+
+                .history-img{
+                    width: 40%;
+                    height: auto;
+                    border-radius: 40px;
+                    overflow: hidden;
+                    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                    @include respond(x_small){
+                        width: 80%;
+                        margin: 1rem 0;
+                    }
+                    @include respond(small){
+                        width: 80%;
+                        margin: 1rem 0;
+                    }
+                    @include respond(medium){
+                        width: 80%;
+                        margin: 1rem 0;
+                    }
+                    @include respond(large){
+                        width: 80%;
+                        margin: 1rem 0;
+                    }
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .history-img:hover{
+                    transform: scale(1.2,1.2);
+                    @include respond(x_small){
+                        transform: scale(1,1);
+                    }
+                    @include respond(small){
+                        transform: scale(1,1);
+                    }
+                    @include respond(medium){
+                        transform: scale(1,1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// contacto
+
+.main-flex{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    background-image: $gradient_background;
+
+    .contenido-contacto{
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        height: auto;
+        @include respond(x_small){
+            width: 95%;
+        }
+        @include respond(small){
+            width: 95%;
+        }
+        @include respond(medium){
+            width: 95%;
+        }
+        @include respond(large){
+            width: 90%;
+        }
+        @include respond(x_large){
+            width: 90%;
+        }
+
+        .flex-aboutme{
+            height: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 85px 0 60px 0;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: $box_shadow;
+
+            .div-flex-me{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+            }
+
+            .about-me{
+                display: flex;
+                height: auto;
+                justify-content: space-around;
+                padding: 40px 0 40px 0;
+                align-items: center;
+                @include respond(x_small){
+                    flex-direction: column;
+                }
+                @include respond(small){
+                    flex-direction: column;
+                }
+
+                div{
+                    width: 30%;
+                    text-align: center;
+                    @include respond(x_small){
+                        width: 40%;
+                    }
+                    @include respond(small){
+                        width: 40%;
+                    }
+                    @include respond(medium){
+                        width: 40%;
+                    }
+                    @include respond(large){
+                        width: 40%;
+                    }
+
+                    img{
+                        width: 70%;
+                        height: auto;
+                        border-radius: 20px;
+                    }
+                }
+
+                p{
+                    width: 50%;
+                    @include respond(x_small){
+                        width: 90%;
+                        margin-top: 60px;
+                    }
+                    @include respond(small){
+                        width: 90%;
+                        margin-top: 60px;
+                    }
+                }
+            }
+        }
+
+        .flex-form{
+            height: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 85px 0 60px 0;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: $box_shadow;
+
+            .div-flex-contact{
+                height: auto;
+
+                .tittle-text{
+                    background-image: $gradient_text;
+                    text-align: center;
+                    color: white;
+                    font-size: 1.3rem;
+                    padding: 1rem 0 1rem 0;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 0 #041529;
+                    font-weight: bold;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-family: $font;
+                }
+
+                .tittle-nomargin{
+                    margin-bottom: 0;
+                }
+            }
+
+            .contact-flex{
+                height: auto;
+                display: flex;
+                justify-content: center;
+                @include respond(x_small){
+                    display: block;
+                }
+
+                .contact-form{
+                    width: 65%;
+                    text-align: center;
+                    background-image: url(../imagenes/contacto/form1opacity.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    padding: 1rem;
+                    color: rgb(151, 0, 0);
+                    font-size: 1rem;
+                    @include respond(x_small){
+                        width: 100%;
+                    }
+
+                    input, textarea{
+                        width: 80%;
+                        margin: 1rem 3rem 1rem 3rem;
+                        border: none;
+                        border-bottom: 0.2rem solid rgb(151, 0, 0);
+                        outline: none;
+                        color: rgb(151, 0, 0);
+                        resize: none;
+                        background: none;
+
+                        ::placeholder{
+                            opacity: 1;
+                            color: rgb(151, 0, 0);
+                        }
+                    }
+
+                    .contactBlock{
+                        display: block;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+
+                    .contact-button{
+                        background: rgb(151, 0, 0);
+                        opacity: 0.25;
+                        color: white;
+                        border: none;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        padding: 0.5em 0 0.5em 0;
+                        width: 25%;
+                        border-radius: 10px;
+                        font-weight: bold;
+                        @include respond(x_small){
+                            opacity: 1;
+                        }
+                        @include respond(small){
+                            opacity: 1;
+                        }
+                        @include respond(medium){
+                            opacity: 1;
+                        }
+
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .contact-img{
+                    width: 35%;
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/contacto/form2.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    @include respond(x_small){
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+        
+    }
+}
