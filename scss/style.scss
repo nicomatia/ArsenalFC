@@ -36,7 +36,8 @@ $box_shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     font-size: 1.5rem;
     opacity: 0.5;
     animation: bounce;
-    animation-iteration-count: infinite;
+    // --animate-iteration-count: infinite;
+    // --animate-duration: 2s;
 }
 
 %news-image{
