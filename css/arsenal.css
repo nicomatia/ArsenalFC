@@ -17,8 +17,7 @@
   color: white;
   font-size: 1.5rem;
   opacity: 0.5;
-  animation: bounce;
-  animation-iteration-count: infinite; }
+  animation: bounce; }
 
 .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia1, .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia2, .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia3, .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia4, .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia5, .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia6, .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia7, .main-flex .contenido-index .news .div-flex-news .hero-image .hero-image-noticia8 {
   height: 100%;
@@ -74,13 +73,18 @@
     .navbar .navbar-nav .nav-item {
       width: auto;
       position: relative;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      display: flex; }
+      .navbar .navbar-nav .nav-item .nav-link {
+        margin: auto; }
+      .navbar .navbar-nav .nav-item .current {
+        font-size: 1.5rem; }
     .navbar .navbar-nav .line a:after {
       content: "";
       position: absolute;
       background-color: white;
       height: 2px;
-      bottom: -0.1rem;
+      bottom: 0.5rem;
       width: 0;
       left: 0;
       transition: 0.3s; }
@@ -646,20 +650,10 @@ footer {
           height: auto; }
       .main-flex .contenido-plantilla .flex-plantilla .plantilla-flexitem2 {
         height: auto;
-        visibility: hidden;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0px, rgba(255, 255, 255, 0.04) 2px, transparent 2px, transparent 4px), linear-gradient(0deg, #063672, rgba(45, 106, 187, 0.644)); }
-        @media only screen and (max-width: 576px) {
-          .main-flex .contenido-plantilla .flex-plantilla .plantilla-flexitem2 {
-            visibility: visible; } }
-        @media only screen and (min-width: 576px) and (max-width: 768px) {
-          .main-flex .contenido-plantilla .flex-plantilla .plantilla-flexitem2 {
-            visibility: visible; } }
-        @media only screen and (min-width: 768px) and (max-width: 992px) {
-          .main-flex .contenido-plantilla .flex-plantilla .plantilla-flexitem2 {
-            visibility: visible; } }
         .main-flex .contenido-plantilla .flex-plantilla .plantilla-flexitem2 .plantilla-text1 {
           padding: 10px 5px 10px 5px; }
         .main-flex .contenido-plantilla .flex-plantilla .plantilla-flexitem2 .plantilla-text2 {
